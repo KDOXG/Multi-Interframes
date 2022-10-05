@@ -1,0 +1,6 @@
+.vscode/
+video_converted_640x360.yuv
+yuvideo/
+img_test/
+bin/
+release/
