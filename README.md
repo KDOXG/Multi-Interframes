@@ -1,2 +1,2 @@
 # Multi-Interframes
-A parallel and distributed interframe prediction for video coding made with OpenMP and MPI
+A parallel and distributed inter-frame prediction solution for video coding made with OpenMP and MPI.
