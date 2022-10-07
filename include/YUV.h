@@ -1,3 +1,6 @@
+#ifndef YUV_H
+#define YUV_H
+
 #include "YUVHeader.h"
 #include "Frame.h"
 #include "lib.h"
@@ -20,3 +23,5 @@ public:
     Frame* getFrame(const int n) const;
     Frame* loadNextFrame();
 };
+
+#endif
