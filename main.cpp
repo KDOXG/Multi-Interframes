@@ -1,5 +1,7 @@
 #include "include/YUV.h"
 #include "include/Interframes.h"
+#include <iostream>
+using namespace std;
 
 int main()
 {
@@ -8,6 +10,7 @@ int main()
     yuv->loadNextFrame();
     interframesPrediction(*yuv);
     yuv->DEBUG();
+    cout << "\tframe[3] " << (int*) yuv->getFrame(3) << '\n';
     delete(yuv);
     return 0;
 }

@@ -1,5 +1,6 @@
 #include "../include/YUV.h"
 #include <iostream>
+#include <algorithm>
 
 YUV::YUV(string filename)
 {
@@ -21,18 +22,30 @@ YUV::YUV(string filename)
         videoBytes->push_back(reading);
     }
     videoFile->close();
-    frames = new vector<Frame*>;
+    frames = new vector<Frame*>();
 }
 
 YUV::~YUV()
 {
     delete(videoFile);
     delete(videoBytes);
+    // for(auto it = frames->begin(); it != frames->end(); it++) delete(*it);
+    for_each(frames->begin(), frames->end(), [](auto it) {delete(it);});
     delete(frames);
 }
 
-Frame* YUV::getFrame(const int n) const
+Frame* YUV::getFrame(const int n)
 {
+    while (frames->size() <= n) frames->push_back(NULL);
+    if (frames->at(n) == NULL)
+    {
+        auto frameBegin = this->videoBytes->begin();
+        frameBegin += n * header.width * header.height / 2;   //2 * w * h / 4
+        auto frameEnd = frameBegin + header.width * header.height;
+
+        Frame* frame = new Frame(new vector<uint8_t>(frameBegin, frameEnd), header);
+        frames->at(n) = frame;
+    }
     return frames->at(n);
 }
 

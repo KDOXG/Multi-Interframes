@@ -20,7 +20,7 @@ public:
     YUV(string filename);
     ~YUV();
     void DEBUG() const;
-    Frame* getFrame(const int n) const;
+    Frame* getFrame(const int n);
     Frame* loadNextFrame();
 };
 

@@ -3,7 +3,7 @@ CC = g++
 # mingw32-make
 
 main: YUVHeader.o YUV.o Frame.o Interframes.o
-	$(CC) main.cpp bin/Frame.o bin/YUVHeader.o bin/YUV.o bin/Interframes.o -o release/main
+	$(CC) main.cpp bin/Frame.o bin/YUVHeader.o bin/YUV.o bin/Interframes.o -o release/main.exe
 
 Frame.o:
 	$(CC) src/Frame.cpp -c -o bin/Frame.o
