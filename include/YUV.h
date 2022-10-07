@@ -12,12 +12,11 @@ class YUV {
     vector<uint8_t> *videoBytes;
 
     vector<Frame*> *frames;
-    int itFrame;
 
 public:
-    YUV(string filename = "template");
+    YUV(string filename);
     ~YUV();
-    void DEBUG();
-    int getFrame(int n);
-    int getNextFrame();
+    void DEBUG() const;
+    Frame* getFrame(const int n) const;
+    Frame* loadNextFrame();
 };

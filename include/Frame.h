@@ -1,13 +1,15 @@
+#include "YUVHeader.h"
+#include "lib.h"
 #include <vector>
 #include <string>
 using namespace std;
 
 class Frame {
-    vector<int> *sample;
+    vector<uint8_t> *sample;
     int width;
     int height;
 
 public:
-    Frame(int w, int h);
+    Frame(vector<uint8_t>* image, YUVHeader &header);
     ~Frame();
 };
