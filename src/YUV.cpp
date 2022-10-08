@@ -7,13 +7,7 @@ YUV::YUV(string filename)
     videoFile = new ifstream(filename, ios::binary);
     // if (!videoFile)
     //     throw error;
-    int wPos = filename.rfind('_') + 1;
-    int wLen = filename.rfind('x') - filename.rfind('_');
-    int hPos = filename.rfind('x') + 1;
-    int hLen = filename.rfind('.') - filename.rfind('x');
-    int w = stoi(filename.substr(wPos, wLen));
-    int h = stoi(filename.substr(hPos, hLen));
-    header = YUVHeader(w,h);
+    header = createHeader(filename);
     videoBytes = new vector<uint8_t>();
     char reading;
     while (!videoFile->eof())
@@ -32,6 +26,17 @@ YUV::~YUV()
     // for(auto it = frames->begin(); it != frames->end(); it++) delete(*it);
     for_each(frames->begin(), frames->end(), [](auto it) {delete(it);});
     delete(frames);
+}
+
+YUVHeader YUV::createHeader(string filename) const
+{
+    int wPos = filename.rfind('_') + 1;
+    int wLen = filename.rfind('x') - filename.rfind('_');
+    int hPos = filename.rfind('x') + 1;
+    int hLen = filename.rfind('.') - filename.rfind('x');
+    int w = stoi(filename.substr(wPos, wLen));
+    int h = stoi(filename.substr(hPos, hLen));
+    return YUVHeader(w,h);
 }
 
 Frame* YUV::getFrame(const int n)

@@ -1,3 +1,6 @@
+#ifndef FRAME_H
+#define FRAME_H
+
 #include "YUVHeader.h"
 #include "lib.h"
 #include <vector>
@@ -10,6 +13,8 @@ class Frame {
     int height;
 
 public:
-    Frame(vector<uint8_t>* image, YUVHeader &header);
+    Frame(vector<uint8_t>* image, YUVHeader& header);
     ~Frame();
 };
+
+#endif

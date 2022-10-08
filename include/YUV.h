@@ -4,6 +4,7 @@
 #include "YUVHeader.h"
 #include "Frame.h"
 #include "lib.h"
+#include <string>
 #include <vector>
 #include <fstream>
 using namespace std;
@@ -15,6 +16,8 @@ class YUV {
     vector<uint8_t> *videoBytes;
 
     vector<Frame*> *frames;
+
+    YUVHeader createHeader(string filename) const;
 
 public:
     YUV(string filename);
