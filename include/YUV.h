@@ -4,10 +4,13 @@
 #include "YUVHeader.h"
 #include "Frame.h"
 #include "lib.h"
+#include "Predictor.h"
 #include <string>
 #include <vector>
 #include <fstream>
 using namespace std;
+
+class Predictor;
 
 class YUV {
     YUVHeader header;
@@ -22,9 +25,11 @@ class YUV {
 public:
     YUV(string filename);
     ~YUV();
-    void DEBUG() const;
+    YUVHeader& getHeader();
     Frame* getFrame(const int n);
     Frame* loadNextFrame();
+
+    friend void DEBUG(YUV&, Predictor&);
 };
 
 #endif

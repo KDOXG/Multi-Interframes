@@ -39,6 +39,11 @@ YUVHeader YUV::createHeader(string filename) const
     return YUVHeader(w,h);
 }
 
+YUVHeader& YUV::getHeader()
+{
+    return header;
+}
+
 Frame* YUV::getFrame(const int n)
 {
     while (frames->size() <= n) frames->push_back(NULL);
@@ -63,15 +68,4 @@ Frame* YUV::loadNextFrame()
     Frame* frame = new Frame(new vector<uint8_t>(frameBegin, frameEnd), header);
     frames->push_back(frame);
     return frame;
-}
-
-void YUV::DEBUG() const
-{
-    cout << "YUVHeader header;\n";
-    cout << "\twidth " << header.width << '\n';
-    cout << "\theight " << header.height << '\n';
-    cout << "ifstream *videoFile;\nvector<uint8_t> *videoBytes;\n";
-    cout << "\tsize " << videoBytes->size() << '\n';
-    cout << "vector<Frame*> *frames;\n";
-    cout << "\tframe quantity " << frames->size() << '\n';
 }

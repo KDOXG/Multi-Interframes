@@ -1,7 +1,8 @@
 #include "../include/PredictionBlock.h"
 
-PredictionBlock::PredictionBlock(int size, int pos): 
-    wSize(size), 
-    hSize(size), 
-    pos(pos) {}
+PredictionBlock::PredictionBlock(const int& wSize, const int& hSize, const int& xPos, const int& yPos): 
+    wSize(wSize), 
+    hSize(hSize), 
+    xPos(xPos),
+    yPos(yPos) {}
 
