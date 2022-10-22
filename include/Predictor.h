@@ -1,5 +1,4 @@
-#ifndef PREDICTOR_H
-#define PREDICTOR_H
+#pragma once
 
 #include "VideoHeader.h"
 #include "Frame.h"
@@ -25,5 +24,3 @@ public:
 
     friend void DEBUG(YUV&, Predictor&);
 };
-
-#endif

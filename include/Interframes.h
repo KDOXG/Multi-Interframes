@@ -1,5 +1,4 @@
-#ifndef INTERFRAMES_H
-#define INTERFRAMES_H
+#pragma once
 
 //now it's time to omp
 #include "YUV.h"
@@ -7,5 +6,3 @@
 #include <omp.h>
 
 void InterframesPrediction(YUV& video, Predictor& predictor);
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef PREDICTIONVECTOR_H
-#define PREDICTIONVECTOR_H
+#pragma once
 
 #include "PredictionBlock.h"
 #include <array>
@@ -12,5 +11,3 @@ struct PredictionVector {
     PredictionVector(const int& x, const int& y, PredictionBlock* block);
     PredictionVector() = default;
 };
-
-#endif

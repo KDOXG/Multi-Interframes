@@ -1,5 +1,4 @@
-#ifndef VIDEOHEADER_H
-#define VIDEOHEADER_H
+#pragma once
 
 struct VideoHeader {
     int width;
@@ -8,5 +7,3 @@ struct VideoHeader {
     VideoHeader(int w, int h);
     VideoHeader() = default;
 };
-
-#endif

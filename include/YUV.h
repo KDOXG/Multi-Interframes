@@ -1,5 +1,4 @@
-#ifndef YUV_H
-#define YUV_H
+#pragma once
 
 #include "YUVHeader.h"
 #include "Frame.h"
@@ -31,5 +30,3 @@ public:
 
     friend void DEBUG(YUV&, Predictor&);
 };
-
-#endif

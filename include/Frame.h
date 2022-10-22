@@ -1,5 +1,4 @@
-#ifndef FRAME_H
-#define FRAME_H
+#pragma once
 
 #include "YUVHeader.h"
 #include "lib.h"
@@ -16,5 +15,3 @@ public:
     Frame(vector<uint8_t>* image, YUVHeader& header);
     ~Frame();
 };
-
-#endif

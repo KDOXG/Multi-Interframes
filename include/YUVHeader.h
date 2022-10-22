@@ -1,5 +1,4 @@
-#ifndef YUVHEADER_H
-#define YUVHEADER_H
+#pragma once
 
 #include "VideoHeader.h"
 
@@ -7,5 +6,3 @@ struct YUVHeader: public VideoHeader {
     YUVHeader(int w, int h);
     YUVHeader() = default;
 };
-
-#endif

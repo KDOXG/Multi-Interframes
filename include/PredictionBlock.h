@@ -1,5 +1,4 @@
-#ifndef PREDICTION_BLOCK_H
-#define PREDICTION_BLOCK_H
+#pragma once
 
 struct PredictionBlock {
     int wSize;
@@ -10,5 +9,3 @@ struct PredictionBlock {
     PredictionBlock(const int& wSize, const int& hSize, const int& xPos, const int& yPos);
     PredictionBlock() = default;
 };
-
-#endif
