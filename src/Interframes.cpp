@@ -1,6 +1,6 @@
 #include "../include/Interframes.h"
 
-void interframesPrediction(YUV& yuv)
+void InterframesPrediction(YUV& video, Predictor& predictor)
 {
-    yuv.loadNextFrame();
+    video.loadNextFrame();
 }
