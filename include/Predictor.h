@@ -21,7 +21,7 @@ public:
 
     // Generate contents for application results (main output)
     void constructBlockVector(int x, int y, PredictionBlock* block);
-    const vector<PredictionBlock>& getBlockList() const;
+    vector<PredictionBlock>& getBlockList() const;
     const vector<PredictionVector>& getResultList() const;
 
     friend void DEBUG(YUV&, Predictor&);

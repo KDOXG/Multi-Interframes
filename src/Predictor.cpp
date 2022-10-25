@@ -22,7 +22,7 @@ void Predictor::constructBlockVector(int x, int y, PredictionBlock* block)
     resultList->emplace_back(x, y, block);
 }
 
-const vector<PredictionBlock>& Predictor::getBlockList() const
+vector<PredictionBlock>& Predictor::getBlockList() const
 {
     return *blockList;
 }

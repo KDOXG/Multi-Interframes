@@ -18,5 +18,6 @@ void DEBUG(YUV& yuv, Predictor& predictor)
     cout << "Predictor predictor;\n\n";
     cout << "vector<PredictionBlock> *blockList;\n";
     cout << "\tprediction blocks quantity " << predictor.blockList->size() << '\n';
-    cout << "\tprediction vectors quantity " << predictor.blockList->size() << '\n';
+    cout << "vector<PredictionVector> *resultList;\n";
+    cout << "\tprediction vectors quantity " << predictor.resultList->size() << '\n';
 }

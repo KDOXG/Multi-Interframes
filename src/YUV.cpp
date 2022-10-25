@@ -39,7 +39,7 @@ YUVHeader YUV::createHeader(string filename) const
     return YUVHeader(w,h);
 }
 
-YUVHeader& YUV::getHeader()
+const YUVHeader& YUV::getHeader() const
 {
     return header;
 }

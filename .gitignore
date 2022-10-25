@@ -1,7 +1,7 @@
 .vscode/
 video_converted_640x360.yuv
 yuvideo/
-img_test/
+test/
 bin/
 release/
 obj/

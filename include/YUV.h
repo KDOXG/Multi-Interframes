@@ -22,9 +22,10 @@ class YUV {
     YUVHeader createHeader(string filename) const;
 
 public:
+    YUV() = default;
     YUV(string filename);
     ~YUV();
-    YUVHeader& getHeader();
+    const YUVHeader& getHeader() const;
     Frame* getFrame(const int n);
     Frame* loadNextFrame();
 
