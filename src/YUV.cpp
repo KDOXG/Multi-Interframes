@@ -5,8 +5,8 @@
 YUV::YUV(string filename)
 {
     videoFile = new ifstream(filename, ios::binary);
-    // if (!videoFile)
-    //     throw error;
+    if (videoFile->fail())
+        throw exception();
     header = createHeader(filename);
     videoBytes = new vector<uint8_t>();
     char reading;
@@ -24,6 +24,8 @@ YUV::~YUV()
     delete(videoFile);
     delete(videoBytes);
     // for(auto it = frames->begin(); it != frames->end(); it++) delete(*it);
+    // for (auto it : *frames)
+    //     delete(it);
     for_each(frames->begin(), frames->end(), [](auto it) {delete(it);});
     delete(frames);
 }

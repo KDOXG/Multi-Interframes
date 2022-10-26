@@ -19,7 +19,7 @@ Frame::~Frame()
 Frame::ByteMatrix Frame::getBlock(const int x, const int y, const int w, const int h) const
 {
     ByteMatrix result;
-    if (!(x < w && y < h && w < width && h < height))
+    if (!(x < w && y < h && w <= width && h <= height))
         return result;
     for (auto it = image->begin()+y; it != image->begin()+h; it++)
     {

@@ -6,6 +6,6 @@
 #include "Frame.h"
 #include <type_traits>
 #include <cstdlib>
-// #include <omp.h>
+#include <omp.h>
 
 void InterframesPrediction(YUV& video, Predictor& predictor);
