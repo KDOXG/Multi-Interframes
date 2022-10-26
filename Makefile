@@ -6,4 +6,7 @@ SRCS = $(wildcard src/*.cpp)
 # mingw32-make
 
 main: $(SRCS)
-	$(CC) $(STD) $(FLAGS) main.cpp $(SRCS) -o release/main.exe
+	@echo Making...
+	@$(CC) $(STD) $(FLAGS) main.cpp $(SRCS) -o release/main
+	@echo Make done!
+	@./release/main
