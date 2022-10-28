@@ -7,9 +7,9 @@ void InterframesPrediction(YUV& video, Predictor& predictor)
     Frame* referenceFrame = video.getFrame(0);
     Frame* nextFrame = video.getFrame(1);
     const int blockSize = 8;
-    // #pragma omp parallel shared(video, predictor, blocks, referenceFrame, nextFrame)
+    #pragma omp parallel shared(video, predictor, blocks, referenceFrame, nextFrame)
     {
-        // #pragma omp for
+        #pragma omp for
         for (auto block = blocks.begin(); block != blocks.end(); block++)
         {
             bool blockFound = false;
@@ -31,7 +31,7 @@ void InterframesPrediction(YUV& video, Predictor& predictor)
                             break;
                     }
                     if (blockFound) {
-                        // #pragma omp critical (blockSave)
+                        #pragma omp critical (blockSave)
                         predictor.constructBlockVector(i, j, addressof(*block));
                         break;
                     }
