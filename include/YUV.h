@@ -29,5 +29,5 @@ public:
     Frame* getFrame(const int n);
     Frame* loadNextFrame();
 
-    friend void DEBUG(YUV&, Predictor&);
+    friend void LOG(YUV&, Predictor&);
 };

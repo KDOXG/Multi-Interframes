@@ -24,5 +24,5 @@ public:
     vector<PredictionBlock>& getBlockList() const;
     const vector<PredictionVector>& getResultList() const;
 
-    friend void DEBUG(YUV&, Predictor&);
+    friend void LOG(YUV&, Predictor&);
 };

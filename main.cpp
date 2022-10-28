@@ -1,3 +1,4 @@
+#include "include/log.h"
 #include "include/YUV.h"
 #include "include/Predictor.h"
 #include "include/Interframes.h"
@@ -32,7 +33,7 @@ int main()
     cout << "Time elapsed: " << omp_get_wtime() - timeElapsed << '\n';
     
     cout << '\n';
-    DEBUG(*yuv, *predictor);
+    LOG(*yuv, *predictor);
     delete(yuv);
     delete(predictor);
     return 0;

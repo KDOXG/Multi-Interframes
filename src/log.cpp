@@ -1,9 +1,10 @@
+#include "../include/log.h"
 #include "../include/YUV.h"
 #include "../include/Predictor.h"
 #include <iostream>
 using namespace std;
 
-void DEBUG(YUV& yuv, Predictor& predictor)
+void LOG(YUV& yuv, Predictor& predictor)
 {
     cout << "YUV yuv;\n\n";
     cout << "YUVHeader header;\n";
