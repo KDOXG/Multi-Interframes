@@ -20,16 +20,20 @@ int main()
         cout << "Error opening video file! Shutting down...\n";
         return -1;
     }
+    cout << "Video class instanced!\n";
     cout << "Time elapsed: " << omp_get_wtime() - timeElapsed << '\n';
-
+    timeElapsed = omp_get_wtime();
     cout << "Instancing predictor class...\n";
     predictor = new Predictor(yuv->getHeader(), 8);
+    cout << "Predictor class instanced!\n";
+    cout << "Time elapsed: " << omp_get_wtime() - timeElapsed << '\n';
     yuv->loadNextFrame();
     yuv->loadNextFrame();
 
     timeElapsed = omp_get_wtime();
     cout << "Running interframes prediction...\n";
     InterframesPrediction(*yuv, *predictor);
+    cout << "Interframes prediction completed!\n";
     cout << "Time elapsed: " << omp_get_wtime() - timeElapsed << '\n';
     
     cout << '\n';
