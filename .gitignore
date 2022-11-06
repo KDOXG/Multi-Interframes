@@ -1,7 +1,9 @@
 .vscode/
 video_converted_640x360.yuv
-yuvideo/
-test/
+video_converted_640x360.zip
 bin/
-release/
+mpi/
 obj/
+release/
+test/
+yuvideo/
