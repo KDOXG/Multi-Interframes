@@ -17,9 +17,9 @@ Predictor::~Predictor()
     delete(resultList);
 }
 
-void Predictor::constructBlockVector(int x, int y, PredictionBlock* block)
+void Predictor::constructBlockVector(int x, int y, PredictionBlock* block, Frame* referenceFrame)
 {
-    resultList->emplace_back(x, y, block);
+    resultList->emplace_back(x, y, block, referenceFrame);
 }
 
 vector<PredictionBlock>& Predictor::getBlockList() const

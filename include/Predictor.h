@@ -20,7 +20,7 @@ public:
     ~Predictor();
 
     // Generate contents for application results (main output)
-    void constructBlockVector(int x, int y, PredictionBlock* block);
+    void constructBlockVector(int x, int y, PredictionBlock* block, Frame* referenceFrame);
     vector<PredictionBlock>& getBlockList() const;
     const vector<PredictionVector>& getResultList() const;
 
