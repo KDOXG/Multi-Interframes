@@ -6,7 +6,7 @@
 #include <type_traits>
 #include <cstdlib>
 #include <omp.h>
-// #include <mpi.h>
+#include <mpi.h>
 
 void InterframesPrediction(YUV& video, Predictor& predictor);
 void blockFind(Frame* referenceFrame, Frame* nextFrame, Predictor& predictor, const VideoHeader& header);

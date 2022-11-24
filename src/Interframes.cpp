@@ -8,18 +8,36 @@ void InterframesPrediction(YUV& video, Predictor& predictor)
     omp_set_nested(true);
 
     // MPI setup
-    // MPI_init();
+    int worldSize, myRank;
+    MPI_Init(NULL, NULL);
+    MPI_Comm_size(MPI_COMM_WORLD, &worldSize);
+    MPI_Comm_rank(MPI_COMM_WORLD, &myRank);
+
+    if (myRank == 0)
+    {
+        cout << "Reference frame is frame 0\n";
+        cout << "Total blocks: " << predictor.getBlockList().size() << '\n';
+    }
 
     // Application setup
     Frame* referenceFrame = video.getFrame(0);
-    Frame* nextFrame = video.getFrame(1);
+    Frame* nextFrame;
 
     // vector<Frame*> *frameList = new vector<Frame*>;
     // frameList->push_back(nextFrame);
 
-    blockFind(referenceFrame, nextFrame, predictor, video.getHeader());
+    for (int it = myRank; it < 20; it+=worldSize)
+    {
+        nextFrame = video.getFrame(it+1);
+        blockFind(referenceFrame, nextFrame, predictor, video.getHeader());
+        cout << "Predicted " << predictor.getResultList().size() << " blocks for frame " << it+1 << '\n';
+        predictor.cleanPredicted();
+    }
+
+
 
     // delete(frameList);
+    MPI_Finalize();
 }
 
 void blockFind(Frame* referenceFrame, Frame* nextFrame, Predictor& predictor, const VideoHeader& header)

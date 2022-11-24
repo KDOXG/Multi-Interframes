@@ -23,6 +23,7 @@ public:
     void constructBlockVector(int x, int y, PredictionBlock* block, Frame* referenceFrame);
     vector<PredictionBlock>& getBlockList() const;
     const vector<PredictionVector>& getResultList() const;
+    void cleanPredicted();
 
     friend void LOG(YUV&, Predictor&);
 };

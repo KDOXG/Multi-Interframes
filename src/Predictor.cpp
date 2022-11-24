@@ -31,3 +31,8 @@ const vector<PredictionVector>& Predictor::getResultList() const
 {
     return *resultList;
 }
+
+void Predictor::cleanPredicted()
+{
+    resultList->clear();
+}
