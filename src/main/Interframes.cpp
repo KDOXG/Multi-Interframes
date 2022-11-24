@@ -1,4 +1,4 @@
-#include "../include/Interframes.h"
+#include "../../include/Interframes.h"
 #include <iostream>
 
 void InterframesPrediction(YUV& video, Predictor& predictor)
@@ -6,9 +6,6 @@ void InterframesPrediction(YUV& video, Predictor& predictor)
     // OpenMP setup
     omp_set_num_threads(4);
     omp_set_nested(true);
-
-    // MPI setup
-    // MPI_init();
 
     // Application setup
     Frame* referenceFrame = video.getFrame(0);

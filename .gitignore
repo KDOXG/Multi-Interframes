@@ -2,7 +2,6 @@
 video_converted_640x360.yuv
 video_converted_640x360.zip
 bin/
-mpi/
 obj/
 release/
 test/

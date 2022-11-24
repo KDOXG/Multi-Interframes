@@ -8,8 +8,9 @@ Download video from https://drive.google.com/file/d/1MfZ13T8ZSEt2DczSoQtER2bqQtg
 Move video to project root folder
 Open terminal in project root folder
 To build without MPI:
-* execute 'make'
+* execute 'make' or 'make main'
 * execute 'make run'
+
 To build with MPI:
 * execute 'make mpi'
 * execute 'make mpirun'
