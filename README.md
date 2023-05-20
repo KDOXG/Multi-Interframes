@@ -4,9 +4,13 @@ A parallel and distributed inter-frame prediction solution for video coding made
 Repo: https://github.com/KDOXG/Multi-Interframes
 
 How to run:
+
 Download video from https://drive.google.com/file/d/1MfZ13T8ZSEt2DczSoQtER2bqQtg3GgPX/view?usp=share_link
+
 Move video to project root folder
+
 Open terminal in project root folder
+
 To build without MPI:
 * execute 'make' or 'make main'
 * execute 'make run'
